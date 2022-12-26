@@ -1,3 +1,11 @@
+1. Добавление элемента "БД основанная на службах"
+2. В обозревателе - 2 клика по ней, после чего именуй таблицу с другим названием, не Table
+3. Запускаешь источник данных и добавляешь эту БД, после чего - выводишь на форму в виде сведений
+4. Кнопка сохранения результов в БД и подсчета до сохранения - ниже
+5. Добавление данных в другую таблицу - берешь из этой кнопки
+6. Везде именуй под себя после insert'a
+
+
 private void button1_Click(object sender, EventArgs e)
         {
             string ConnectionString = @"Data Source=(localDB)\MSSQLLocalDB;Initial Catalog=test;Integrated Security=True";
@@ -23,7 +31,7 @@ private void button1_Click(object sender, EventArgs e)
         }
     }
 
----
+--- вычисления
  private void button1_Click(object sender, EventArgs e)
         {
             int a = Convert.ToInt32(nameTextBox.Text) ;

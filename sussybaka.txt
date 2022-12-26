@@ -1,0 +1,45 @@
+private void button1_Click(object sender, EventArgs e)
+        {
+            string ConnectionString = @"Data Source=(localDB)\MSSQLLocalDB;Initial Catalog=test;Integrated Security=True";
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand("INSERT INTO test111 (id,name,family,kabinet) values (@id,@name,@family,@kabinet)");
+                command.Connection = conn;
+                command.Parameters.AddWithValue("id", textBox1.Text);
+                command.Parameters.AddWithValue("name", textBox2.Text);
+                command.Parameters.AddWithValue("family", textBox3.Text);
+                command.Parameters.AddWithValue("kabinet", textBox4.Text);
+                command.ExecuteNonQuery();
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form main = new Form1();
+            main.Show();
+        }
+    }
+
+---
+ private void button1_Click(object sender, EventArgs e)
+        {
+            int a = Convert.ToInt32(nameTextBox.Text) ;
+            int s = a + 12;
+            nameTextBox.Text = s.ToString();
+
+            string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\source\repos\testings\testings\Database1.mdf;Integrated Security=True";
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand("INSERT INTO Tabler (id,name,family,cabinet) values (@id,@name,@family,@cabinet)");
+                command.Connection = conn;
+                command.Parameters.AddWithValue("id", idTextBox.Text);
+                command.Parameters.AddWithValue("name", nameTextBox.Text);
+                command.Parameters.AddWithValue("family", familyTextBox.Text);
+                command.Parameters.AddWithValue("cabinet", cabinetTextBox.Text);
+                command.ExecuteNonQuery();
+
+            }
